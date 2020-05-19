@@ -1,0 +1,78 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>loading</title>
+    </head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "montserrat",sans-serif;
+        }
+
+        .loading{
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            border-top: 10px solid #FF7729;
+            position: relative;
+            animation: a1 2s linear infinite;
+        }
+
+        .loading::before,.loading::after{
+            content: '';
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: -10px;
+            box-sizing: border-box;
+            border-radius: 50%;
+        }
+
+        .loading::before{
+            border-top: 10px solid #E6AB35;
+            transform: rotate(120deg);
+        }
+
+        .loading::after{
+            border-top: 10px solid #1264E6;
+            transform: rotate(240deg);
+        }
+
+        .loading span{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            color: black;
+            text-align: center;
+            line-height: 200px;
+            animation: a2 2s linear infinite;
+        }
+
+        @keyframes a1{
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes a2{
+            to{
+                transform: rotate(-360deg);
+            }
+        }
+
+    </style>
+    <body>
+        <div class="loading">
+            <span>loading...</span>
+        </div>
+    </body>
+</html>

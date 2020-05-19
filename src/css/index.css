@@ -1,0 +1,639 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#header{
+  background-color: #2c3e50;
+  color: bisque;
+  height: 7vh;
+  width: 100%;
+  padding: 5px;
+}
+
+.logo{
+  float: left;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.logo a{
+  font-family: "DFKai-sb";
+  /* font-weight:bold; */
+  color: bisque;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+/* -----------------navbar start---------------- */
+.right-menu{
+  position: relative;
+  float: right;
+  margin-right: 3%;
+}
+
+.menu-header-city,
+.menu-header-food,
+.menu-header-about{
+  display: inline-block;
+  position: relative;
+  margin-right: 25px;
+  font-size: 25px;
+  margin-top: 15px;
+}
+
+/* -----------------navbar city start---------------- */
+.sub-menu-city{
+  position: absolute;
+  font-family: "SimSun";
+  background-color: #ecf0f1;
+  list-style-type: none;
+  width: 25vw;
+  padding: 0;
+  margin: 0 auto;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.menu-header-city:hover .sub-menu-city{
+  opacity: 1;
+  z-index: 3;
+}
+
+.single-region{
+  display: block;
+  background-color: #34495e; 
+  color: #ecf0f1;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.region-text{
+  font-family: "SimSun";
+  background-color: #34495e; 
+  color: #ecf0f1;
+  font-size: 20px;
+}
+
+.single-city{
+  display: inline;
+}
+
+.single-city a{
+  font-family: "SimSun";
+  color: #34495e;
+  padding: 0;
+  font-size: 20px;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+.single-city a:hover {
+  color: #2980b9;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* -----------------navbar city end---------------- */
+
+/* -----------------navbar food start---------------- */
+.sub-menu-food {
+  position: absolute;
+  font-family: "SimSun";
+  background-color: #ecf0f1;
+  list-style-type: none;
+  width: 7vw;
+  padding: 0;
+  margin: 0 auto;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.menu-header-food:hover .sub-menu-food{
+  opacity: 1;
+  z-index: 3;
+}
+
+.food-title{
+  display: block;
+  background-color: #34495e; 
+  color: #ecf0f1;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.food-text{
+  font-family: "SimSun";
+  background-color: #34495e; 
+  color: #ecf0f1;
+  font-size: 20px;
+}
+
+.food-kind{
+  display: block;
+}
+
+.food-kind a{
+  font-family: "SimSun";
+  color: #34495e;
+  padding: 0;
+  font-size: 20px;
+  margin-left: 5px;
+  margin-top: 50px;
+}
+
+.food-kind a:hover {
+  color: #2980b9;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* -----------------navbar food end---------------- */
+
+/* -----------------navbar text start---------------- */
+
+.menu-header-city a.menu-header-text,
+.menu-header-food a.menu-header-text,
+.menu-header-about a.menu-header-text{
+  font-family: "SimSun";
+  background-color: none; 
+  color: bisque;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+/* -----------------navbar text end---------------- */
+/* -----------------navbar end---------------- */
+
+/* -----------------輪播畫面 start---------------- */
+
+#carousel-box {
+  height: 45vh;
+  text-align: center;
+  background-image: url(/src/image/large_quiche_opt.jpg);
+  background-size: cover;
+  width: 100%;
+}
+/* -----------------輪播畫面 end---------------- */
+
+/* ------------- search-box start ----------------------- */
+#main {
+  height: 45vh;
+}
+#search {
+  margin-top: 40px;
+}
+
+#food-box,
+#city-box{
+  display: inline-block;
+}
+
+#food-search{
+  border: solid 2px #34495e;
+  height: 50px;
+  width: 350px;
+  border-radius: 30px 0px 0px 30px;
+  outline: none;
+}
+
+#city-search {
+  border: solid 2px #34495e;
+  height: 50px;
+  width: 300px;
+  border-radius: 0px 30px 30px 0px;
+  outline: none;
+}
+
+.el-icon-fork-spoon {
+  margin-left: -120px;
+  font-size: 25px; 
+  color: #34495e;
+}
+
+.el-icon-location-information{
+  margin-left: -120px;
+  font-size: 25px; 
+  color: #34495e;
+}
+
+.search-button {
+  font-size: 18px;
+  color: aliceblue;
+  background-color: #2c3e50; 
+  border-radius: 40px; 
+  width: 80px;
+  height: 48px; 
+  outline: none !important;
+}
+
+
+#search-food-sub-menu {
+  background-color: white;
+  position: absolute;
+  list-style-type: none;
+  border: solid 0.3px #ecf0f1;
+  height: 350px;
+  width: 250px;
+  margin-top: 3px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-left: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 4;
+}
+
+.food-search-title,
+.el-icon-knife-fork {
+ color: #2c3e50;
+ font-size: 21px;
+ font-weight: bold;
+}
+
+li.food-search-kind {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.food-search-kind a{
+  display: block;
+  color: #3b5c7d;
+}
+
+li.food-search-kind:hover,
+li.food-search-kind a:hover{
+  color: #0984e3;
+  background-color: #74b9ff29;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#search-city-sub-menu {
+  background-color: white;
+  position: absolute;
+  list-style-type: none;
+  border: solid 1px #ecf0f1;
+  height: 350px;
+  width: 250px;
+  margin-top: 3px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-left: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 4;
+}
+
+.city-search-title,
+.el-icon-location {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 21px;
+}
+
+li.city-search-kind {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.city-search-kind a{
+  display: block;
+  color: #3b5c7d;
+}
+
+li.city-search-kind:hover,
+li.city-search-kind a:hover{
+  color: #0984e3;
+  background-color: #74b9ff29;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ------------- search-box end ----------------------- */
+/* ------------------picture-select start------------------- */
+.picture-select{
+  text-align: center;
+}
+
+.picture-select-title {
+  text-align: center;
+  font-family: "標楷體";
+  font-size: 35px;
+  font-weight: 900;
+  color: #34495e;
+  margin-top: 80px;
+  margin-bottom: 3px;
+}
+.picture-select-title p {
+  text-align: center;
+  font-family: "SimSun";
+  font-size: 15px;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 35px;
+}
+
+.picture-select ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+/* ------------------ */
+ul.u1>li.l1-1{
+  width: 500px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.l1-1>figure>a>img{
+  width: 500px;
+  height: 250px;
+  transition: 1s;
+}
+
+.l1-1>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l1-1>figure>a>figcaption{
+  position: absolute;
+  color: white;
+  font-size: 45px;
+  line-height: 250px;
+  margin-left: 220px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+ul.u1>li.l1-2{
+  width: 240px;
+  height:250px;
+  overflow: hidden;
+}
+
+.l1-2>figure>a>img {
+  width: 240px;
+  height:250px;
+  margin-left: 10px;
+  transition: 1s;
+}
+
+.l1-2>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l1-2>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 250px;
+  margin-left: 90px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+ul.u1>li.l2-1{
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.l2-1>figure>a>img {
+  width: 240px;
+  height: 200px;
+  transition: 1s;
+}
+
+.l2-1>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l2-1>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 200px;
+  margin-left: 70px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+
+ul.u1>li.l2-2{
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.l2-2>figure>a>img {
+  width: 240px;
+  height: 200px;
+  margin-left: 10px;
+  transition: 1s;
+}
+
+.l2-2>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l2-2>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 200px;
+  margin-left: 70px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+
+ul.u1>li.l2-3{
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.l2-3>figure>a>img {
+  width: 240px;
+  height: 200px;
+  margin-left: 10px;
+  transition: 1s;
+}
+
+.l2-3>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l2-3>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 200px;
+  margin-left: 90px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+
+ul.u1>li.l3-1 {
+  width: 240px;
+  height:250px;
+  overflow: hidden;
+}
+
+.l3-1>figure>a>img {
+  width: 240px;
+  height:250px;
+  transition: 1s;
+}
+
+.l3-1>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l3-1>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 250px;
+  margin-left: 70px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+
+ul.u1>li.l3-2 {
+  width: 490px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.l3-2>figure>a>img {
+  width: 490px;
+  height: 250px;
+  margin-left: 10px;
+  transition: 1s;
+}
+
+.l3-2>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.05);
+}
+
+.l3-2>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 250px;
+  margin-left: 180px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+ul.u1>li.l4-1 {
+  width: 250px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.l4-1>figure>a>img {
+  width: 250px;
+  height: 200px;
+  transition: 1s;
+}
+
+.l4-1>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l4-1>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 200px;
+  margin-left: 95px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+
+ul.u1>li.l4-2 {
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.l4-2>figure>a>img {
+  width: 240px;
+  height: 200px;
+  margin-left: 10px;
+  transition: 1s;
+}
+
+.l4-2>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l4-2>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 200px;
+  margin-left: 90px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------ */
+
+ul.u1>li.l4-3 {
+  width: 240px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.l4-3>figure>a>img {
+  width: 240px;
+  height: 200px;
+  margin-left: 10px;
+  transition: 1s;
+}
+
+.l4-3>figure:hover img {
+  filter: grayscale(45%);
+  transform: scale(1.1);
+}
+
+.l4-3>figure>a>figcaption{
+  position: absolute;
+  color:white;
+  font-size: 45px;
+  line-height: 200px;
+  margin-left: 70px;
+  z-index: 3;
+  font-family: "標楷體";
+}
+/* ------------------picture-select end------------------- */
+/* ----------------footer start---------------- */
+#footer {
+  text-align: center;
+  position: relative;
+  background-color:#34495e;
+  height: 4vh;
+  margin-top: 110vh;
+}
+
+a.footer-text{
+  color: #ecf0f1;
+}
+/* ----------------footer end---------------- */

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Drodown Menu on Hover</title>
+    </head>
+    <body>
+        <nav class="navClass">
+            <ul>
+                <li>Car 
+                    <ul class="sub-menu">
+                        <li><span>北部</span></li>
+                        <br>
+                        <li>Toyota</li>
+                        <li>Honda</li>
+                        <li>Ford</li>
+                        <br>
+                        <li><span>中部</span></li>
+                        <br>
+                        <li>Toyota</li>
+                        <li>Honda</li>
+                        <li>Ford</li>
+                        <br>
+                    </ul>
+                    <span class="arrow">&#9660;</span>
+                </li>
+                <li>Computer
+                    <ul class="sub-menu">
+                        <li>Mac</li>
+                        <li>PC</li>            
+                    </ul>
+                    <span class="arrow">&#9660;</span>
+                </li>
+                <li> Drink </li>
+            </ul>
+        </nav>
+    </body>
+    <style>
+        .navClass > ul {
+            background-color: #5E5D5D;
+            color: #d8d8d8;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+
+        .navClass > ul > li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 5px 25px;
+            position: relative;
+        }
+
+        .navClass > ul > li:hover {
+            background-color: #383838;
+        }
+
+        ul.sub-menu {
+            position: absolute;
+            background-color: #383838;
+            list-style-type: none;
+            width: 350px;
+            padding-left: 0px;
+            margin-left: -25px;
+            padding-top: 5px;
+            opacity: 0;
+        }
+        
+        ul.sub-menu li {
+            display: inline;
+            margin-right: 15px;
+            margin-left: 25px;
+            padding-left: 1px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        ul.sub-menu li span {
+            margin-top: -5px;
+            display: block;
+        }
+
+        .navClass li:hover .sub-menu {
+            opacity: 3;
+        }
+
+        ul.sub-menu li:hover {
+            color: white;
+            background-color: #656565;
+        }
+    </style>
+</html>

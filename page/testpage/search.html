@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>InputSearch</title>
+    </head>
+    <body>
+        <div class="search-box">
+            <input onclick="showhide_food()" id="food-search" placeholder="美食分類、餐廳">
+                <ul style="display: none;" id="food-sub-menu">
+                    <li class="food-title">各式料理</li>
+                    <li class="food-kind"><a href="/page/test.html">日式料理</a></li>
+                    <li class="food-kind">韓式料理</li>
+                    <li class="food-kind">中式料理</li>
+                    <li class="food-kind">美式料理</li>
+                    <li class="food-kind">義式料理</li>
+                    <li class="food-kind">泰式料理</li>
+                    <li class="food-kind">港式料理</li>
+                </ul>
+            <input onclick="showhide_city()" id="city-search" placeholder="搜尋地點">
+                <ul style="display: none;" id="city-sub-menu">
+                    <li class="city-title">目標城市</li>
+                    <li class="city-kind"><a href="/page/test.html">臺北市</a></li>
+                    <li class="city-kind">新北市</li>
+                    <li class="city-kind">基隆市</li>
+                    <li class="city-kind">新竹市</li>
+                    <li class="city-kind">桃園市</li>
+                </ul>
+        </div>
+    </body>
+    <script>
+        function showhide_food() {
+            var clickfood = document.getElementById("food-sub-menu");
+            var clickcity = document.getElementById("city-sub-menu");
+
+            if(clickfood.style.display === "none" || clickcity.style.display === "block"){
+                clickcity.style.display = "none";
+                clickfood.style.display = "block";
+            }else if(clickfood.style.display === "block"){
+                clickfood.style.display = "none";
+            }
+            // var clickfood= document.getElementById("food-sub-menu");
+            // if(clickfood.style.display === "none")
+            //     clickfood.style.display = "block";
+            // else
+            //     clickfood.style.display = "none";
+        }
+
+        function showhide_city() {
+            var clickfood = document.getElementById("food-sub-menu");
+            var clickcity = document.getElementById("city-sub-menu");
+
+            if(clickcity.style.display === "none" || clickfood.style.display === "block"){
+                clickfood.style.display = "none";
+                clickcity.style.display = "block";
+            }else if(clickcity.style.display === "block"){
+                clickcity.style.display = "none";
+            }   
+        }
+    </script>
+    <style>
+        html {
+            background-image: linear-gradient(120deg, #81ecec,#74b9ff);
+            height: 100%;
+        }
+
+        .search-box {
+            margin-top: 15%;
+            display: inline-block;
+            position: relative;
+            margin-left: 40%;
+        }
+
+
+        /* ----------------start------------------ */
+        #food-sub-menu {
+            position: absolute;
+            background-image: linear-gradient(120deg,#ffeaa7,#fab1a0);
+            list-style-type: none;
+            width: 160px;
+            padding-left: 0px;
+            margin-top: 0px;
+            padding-top: 5px;
+            height: 350px;
+            overflow-y: scroll;
+            z-index: 1;
+        }
+
+        #city-sub-menu {
+            background-image: linear-gradient(120deg,#ffeaa7,#fab1a0);
+            list-style-type: none;
+            width: 160px;
+            margin-top: 0px;
+            padding-top: 5px;
+            padding-left: 0px;
+            margin-left: 165px;
+            height: 350px;
+            overflow-y: scroll;
+            z-index: 1;
+        }
+    </style>
+</html>

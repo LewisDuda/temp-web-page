@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link href="/src/css/index.css" rel="stylesheet" type="text/css">
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="/src/javascript/index.js"></script>
+</head>
+
+<body>
+    <div id="web">
+        <div id="header" onclick="hide_search()">
+            <div class="logo">
+                <a href="./index.html">食記</a>
+            </div>
+            <div class="right-menu">
+                <ul style="margin: 0 auto;">
+                    <li class="menu-header-city"><a class="menu-header-text">城市</a>
+                        <ul class="sub-menu-city">
+                            <li class="single-region"><a class="region-text">北部地區</a></li>
+                            <li class="single-city"><a href="/page/content/city/taipei.html">台北市</a></li>
+                            <li class="single-city"><a href="/page/content/city/newtaipei.html">新北市</a></li>
+                            <li class="single-city"><a href="/page/404.html">桃園市</a></li>
+                            <li class="single-city"><a href="/page/404.html">基隆市</a></li><br>
+                            <li class="single-city"><a href="/page/404.html">新竹縣</a></li>
+                            <li class="single-city"><a href="/page/404.html">新竹市</a></li>
+                            <li><span class="single-region"><a class="region-text">中部地區</a></span></li>
+                            <li class="single-city"><a href="/page/content/city/taichung.html">台中市</a></li>
+                            <li class="single-city"><a href="/page/404.html">苗栗縣</a></li>
+                            <li class="single-city"><a href="/page/content/city/changhua.html">彰化縣</a></li>
+                            <li class="single-city"><a href="/page/404.html">南投縣</a></li><br>
+                            <li class="single-city"><a href="/page/404.html">雲林縣</a></li>
+                            <li><span class="single-region"><a class="region-text">南部地區</a></span></li>
+                            <li class="single-city"><a href="/page/content/city/kaohsiung.html">高雄市</a></li>
+                            <li class="single-city"><a href="/page/content/city/tainan.html">台南市</a></li>
+                            <li class="single-city"><a href="/page/404.html">嘉義市</a></li>
+                            <li class="single-city"><a href="/page/404.html">嘉義縣</a></li><br>
+                            <li class="single-city"><a href="/page/404.html">屏東縣</a></li>
+                            <li><span class="single-region"><a class="region-text">東部地區</a></span></li>
+                            <li class="single-city"><a href="/page/content/city/yilan.html">宜蘭縣</a></li>
+                            <li class="single-city"><a href="/page/content/city/hualien.html">花蓮縣</a></li>
+                            <li class="single-city"><a href="/page/404.html">台東縣</a></li>
+                        </ul>
+                        <span class="arrow"><i class="el-icon-arrow-down" style="margin-left: 10px;"></i></span>
+                    </li>
+                    <li class="menu-header-food"><a class="menu-header-text">美食</a>
+                        <ul class="sub-menu-food">
+                            <li><span class="food-title"><a class="food-text">各式料理</a></span></li>
+                            <li class="food-kind"><a href="/page/content/kind/japanese.html">日式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/korean.html">韓式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/china.html">中式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/american.html">美式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/italy.html">義式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/thailand.html">泰式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/hongkong.html">港式料理</a></li>
+                        </ul>
+                        <span class="arrow"><i class="el-icon-arrow-down"></i></span>
+                    </li>
+                    <li class="menu-header-about"><a class="menu-header-text" href="/page/about.html">關於我們</a></li>
+                </ul>
+            </div>
+        </div>        
+        <div id="carousel-box" onclick="hide_search()">
+            <el-carousel :interval="3000" type="card" style="height: 35vh;overflow-y: hidden;">
+                <el-carousel-item v-for="item in imgList" style="margin-top: 2%;">
+                    <img style="height: 35vh;" class="image" :src="item.img">
+                </el-carousel-item>
+            </el-carousel>
+        </div>
+        <div id="search">
+            <b-container class="search-box" fulid>
+                <b-row>
+                    <b-col cols="9" offset="3">
+                        <div id="food-box">
+                            <input onclick="showhide_food()" id="food-search" placeholder="美食分類、餐廳">
+                            <i class="el-icon-fork-spoon"></i>
+                            <ul style="display: none;" id="search-food-sub-menu">
+                                <li><i class="el-icon-knife-fork"></i><a class="food-search-title">各式料理</a></li>
+                                <li class="food-search-kind"><a href="/page/content/kind/japanese.html">日式料理</a></li>
+                                <li class="food-search-kind"><a href="/page/content/kind/korean.html">韓式料理</a></li>
+                                <li class="food-search-kind"><a href="/page/content/kind/china.html">中式料理</a></li>
+                                <li class="food-search-kind"><a href="/page/content/kind/american.html">美式料理</a></li>
+                                <li class="food-search-kind"><a href="/page/content/kind/italy.html">義式料理</a></li>
+                                <li class="food-search-kind"><a href="/page/content/kind/thailand.html">泰式料理</a></li>
+                                <li class="food-search-kind"><a href="/page/content/kind/hongkong.html">港式料理</a></li>
+                            </ul>
+                        </div>
+                        <div id="city-box">
+                            <input onclick="showhide_city()" id="city-search" placeholder="搜尋地點">
+                            <i class="el-icon-location-information"></i>
+                            <button class="search-button"><i class="el-icon-search" @click="jumpto()"></i></button>
+                            <ul style="display: none;" id="search-city-sub-menu">
+                                <li><i class="el-icon-location"></i><a class="city-search-title">目標城市</a></li>
+                                <li class="city-search-kind"><a href="/page/content/city/taipei.html">臺北市</a></li>
+                                <li class="city-search-kind"><a href="/page/content/city/newtaipei.html">新北市</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">桃園市</a></li>
+                                <li class="city-search-kind"><a href="/page/content/city/taichung.html">臺中市</a></li>
+                                <li class="city-search-kind"><a href="/page/content/city/tainan.html">臺南市</a></li>
+                                <li class="city-search-kind"><a href="/page/content/city/kaohsiung.html">高雄市</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">基隆市</a></li>
+                                <li class="city-search-kind"><a href="/page/content/city/yilan.html">宜蘭縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">新竹市</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">新竹縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">苗栗縣</a></li>
+                                <li class="city-search-kind"><a href="/page/content/city/changhua.html">彰化縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">雲林縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">嘉義市</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">嘉義縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">屏東縣</a></li>
+                                <li class="city-search-kind"><a href="/page/content/city/hualien.html">花蓮縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">南投縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">台東縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">澎湖縣</a></li>
+                                <li class="city-search-kind"><a href="/page/404.html">金門縣</a></li>
+                            </ul>
+                        </div>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </div>
+        <div id="main" onclick="hide_search()">
+            <div class="picture-select-title" onclick="hide_search()">
+                今天想吃什麼?
+                <p>搜尋全台多種美食</p>
+            </div>
+            <div class="picture-select">
+                <ul class="u1">
+                    <li class="l1-1">
+                        <figure>
+                            <a href="page/content/kind/hotpot.html">
+                                <figcaption>
+                                    鍋類
+                                </figcaption>
+                                <img src="/src/image/Lovepik_com-500690705-hot-pot_opt.jpg">
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="l1-2">
+                        <figure>
+                            <a href="page/content/kind/dessert.html">
+                                <figcaption>
+                                    甜點
+                                </figcaption>
+                                <img src="/src/image/dessert_meringues_opt.jpg">
+                            </a>
+                        </figure>
+                    </li>
+                </ul>
+                <ul class="u2">
+                    <li class="l2-1">
+                        <figure>
+                            <a href="page/content/kind/bbq.html">
+                                <figcaption>
+                                    燒烤
+                                </figcaption>
+                                <img src="/src/image/steak_opt.jpg">
+                            </a>                            
+                        </figure>
+                    </li>
+                    <li class="l2-2">
+                        <figure>
+                            <a href="page/content/kind/brunch.html">
+                                <figcaption>
+                                    早午餐
+                                </figcaption>
+                                <img src="/src/image/burger_opt.jpg">
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="l2-3">
+                        <figure>
+                            <a href="page/content/kind/china.html">
+                                <figcaption>
+                                    中式
+                                </figcaption>
+                                <img src="/src/image/rice_opt.jpg">
+                            </a>
+                        </figure>
+                    </li>
+                </ul>
+                <ul class="u3">
+                    <li class="l3-1">
+                        <figure>
+                            <a href="page/content/kind/japanese.html">
+                                <figcaption>
+                                    日式
+                                </figcaption>
+                                <img src="/src/image/sushi_opt.jpg">
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="l3-2">
+                        <figure>
+                            <a href="page/content/kind/restaurant.html">
+                                <figcaption>
+                                    聚會餐廳
+                                </figcaption>
+                                <img src="/src/image/friends-restaurant_opt.jpg">
+                            </a>
+                        </figure>
+                    </li>
+                </ul>
+                <ul class="u4">
+                    <li class="l4-1">
+                        <figure>
+                            <a href="page/content/kind/korean.html">
+                                <figcaption>
+                                    韓式
+                                </figcaption>
+                                <img src="/src/image/korean-seafood-stew_opt.jpg">
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="l4-2">
+                        <figure>
+                            <a href="page/404.html">
+                                <figcaption>
+                                    酒吧
+                                </figcaption>
+                                <img src="/src/image/glasses_opt.jpg">
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="l4-3">
+                        <figure>
+                            <a href="page/404.html">
+                                <figcaption>
+                                    居酒屋
+                                </figcaption>
+                            <img src="/src/image/chicken-3183558_1280_opt.jpg">
+                        </a>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <a class="footer-text">Copyright ©2020</a>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    // UI Control
+    function showhide_food() {
+        var clickfood = document.getElementById("search-food-sub-menu");
+        var clickcity = document.getElementById("search-city-sub-menu");
+
+
+        if (clickfood.style.display === "none" || clickcity.style.display === "block") {
+            clickfood.style.display = "block";
+            clickcity.style.display = "none";
+        } else if (clickfood.style.display === "block") {
+            clickfood.style.display = "none";
+        }
+    }
+
+    function showhide_city() {
+        var clickfood = document.getElementById("search-food-sub-menu");
+        var clickcity = document.getElementById("search-city-sub-menu");
+
+        if (clickcity.style.display === "none" || clickfood.style.display === "block") {
+            clickfood.style.display = "none";
+            clickcity.style.display = "block";
+        } else if (clickcity.style.display === "block") {
+            clickcity.style.display = "none";
+        }
+    }
+
+    function hide_search() {
+        var clickfood = document.getElementById("search-food-sub-menu");
+        var clickcity = document.getElementById("search-city-sub-menu");
+        var clickheader = document.getElementById("header")
+        var clickCarousel_box = document.getElementById("carousel-box")
+        var clickmain = document.getElementById("main")
+        var clickpictureselecttitle = document.getElementsByClassName("picture-select-title")
+
+        if (clickheader || clickCarousel_box || clickmain || clickpictureselecttitle) {
+            clickfood.style.display = "none";
+            clickcity.style.display = "none";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,inital-scale=1.0">
+    <title>GetData</title>
+
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="/src/css/searchAll.css" rel="stylesheet" type="text/css">
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/src/javascript/searchAll.js"></script>
+</head>
+
+<body>
+    <div id="web">
+        <div id="header">
+            <div class="logo">
+                <a href="/index.html">食記</a>
+            </div>
+            <div class="right-menu">
+                <ul style="margin: 0 auto;">
+                    <li class="menu-header-city"><a class="menu-header-text">城市</a>
+                        <ul class="sub-menu-city">
+                            <li class="single-region"><a class="region-text">北部地區</a></li>
+                            <li class="single-city"><a href="/page/content/city/taipei.html">台北市</a></li>
+                            <li class="single-city"><a href="/page/content/city/newtaipei.html">新北市</a></li>
+                            <li class="single-city"><a href="/page/404.html">桃園市</a></li>
+                            <li class="single-city"><a href="/page/404.html">基隆市</a></li><br>
+                            <li class="single-city"><a href="/page/404.html">新竹縣</a></li>
+                            <li class="single-city"><a href="/page/404.html">新竹市</a></li>
+                            <li><span class="single-region"><a class="region-text">中部地區</a></span></li>
+                            <li class="single-city"><a href="/page/content/city/taichung.html">台中市</a></li>
+                            <li class="single-city"><a href="/page/404.html">苗栗縣</a></li>
+                            <li class="single-city"><a href="/page/content/city/changhua.html">彰化縣</a></li>
+                            <li class="single-city"><a href="/page/404.html">南投縣</a></li><br>
+                            <li class="single-city"><a href="/page/404.html">雲林縣</a></li>
+                            <li><span class="single-region"><a class="region-text">南部地區</a></span></li>
+                            <li class="single-city"><a href="/page/content/city/kaohsiung.html">高雄市</a></li>
+                            <li class="single-city"><a href="/page/content/city/tainan.html">台南市</a></li>
+                            <li class="single-city"><a href="/page/404.html">嘉義市</a></li>
+                            <li class="single-city"><a href="/page/404.html">嘉義縣</a></li><br>
+                            <li class="single-city"><a href="/page/404.html">屏東縣</a></li>
+                            <li><span class="single-region"><a class="region-text">東部地區</a></span></li>
+                            <li class="single-city"><a href="/page/content/city/yilan.html">宜蘭縣</a></li>
+                            <li class="single-city"><a href="/page/content/city/hualien.html">花蓮縣</a></li>
+                            <li class="single-city"><a href="/page/404.html">台東縣</a></li>
+                        </ul>
+                        <span class="arrow"><i class="el-icon-arrow-down" style="margin-left: 10px;"></i></span>
+                    </li>
+                    <li class="menu-header-food"><a class="menu-header-text">美食</a>
+                        <ul class="sub-menu-food">
+                            <li><span class="food-title"><a class="food-text">各式料理</a></span></li>
+                            <li class="food-kind"><a href="/page/content/kind/japanese.html">日式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/korean.html">韓式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/china.html">中式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/american.html">美式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/italy.html">義式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/thailand.html">泰式料理</a></li>
+                            <li class="food-kind"><a href="/page/content/kind/hongkong.html">港式料理</a></li>
+                        </ul>
+                        <span class="arrow"><i class="el-icon-arrow-down"></i></span>
+                    </li>
+                    <li class="menu-header-about"><a class="menu-header-text" href="/page/about.html">關於我們</a></li>
+                </ul>
+            </div>
+        </div>        
+        <section class="loading-section" v-if="loading">
+            <div class="loading">
+                <span>loading...</span>
+            </div>
+        </section>
+        <section v-else>
+            <div class="container">
+                <div id="main">
+                    <table class="default-table" scroll="true">
+                        <thead></thead>
+                        <tbody>
+                            <tr v-for="(item, key) in tableData" :key="key">
+                                <td>
+                                    <img :src="item.picture">
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li style="font-size: 25px;font-weight: 700;">{{ item.name }}</li>
+                                        <li>營業時間&ensp;&ensp;|&ensp;&ensp;{{ item.businesstime }}</li>
+                                        <li>店家地址&ensp;&ensp;|&ensp;&ensp;{{ item.address }}</li>
+                                        <li>連絡電話&ensp;&ensp;|&ensp;&ensp;{{ item.phone }}</li>
+                                        <li>均消價位&ensp;&ensp;|&ensp;&ensp;${{ item.price }}</li>
+                                        <li>臉書頁面&ensp;&ensp;|&ensp;&ensp;<i id="fb" class="fab fa-facebook-f"></i><a
+                                                v-bind:href="item.website">{{ item.name }}</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="footer">
+                <a class="footer-text">Copyright ©2020</a>
+            </div>
+            <el-backtop></el-backtop>
+        </section>
+    </div>
+</body>
+
+</html>

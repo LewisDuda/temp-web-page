@@ -1,0 +1,273 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+#header{
+  background-color: #2c3e50;
+  color: bisque;
+  height: 7vh;
+  width: 100%;
+  padding: 5px;
+}
+
+.logo{
+  float: left;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.logo a{
+  font-family: "DFKai-sb";
+  /* font-weight:bold; */
+  color: bisque;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+/* -----------------navbar start---------------- */
+
+.right-menu{
+  position: relative;
+  float: right;
+  margin-right: 3%;
+}
+
+.menu-header-city,
+.menu-header-food,
+.menu-header-about{
+  display: inline-block;
+  position: relative;
+  margin-right: 25px;
+  font-size: 25px;
+  margin-top: 2%;
+}
+
+/* -----------------navbar city start---------------- */
+.sub-menu-city{
+  position: absolute;
+  font-family: "SimSun";
+  background-color: #ecf0f1;
+  list-style-type: none;
+  width: 25vw;
+  padding: 0;
+  margin: 0 auto;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.menu-header-city:hover .sub-menu-city{
+  opacity: 1;
+  z-index: 3;
+}
+
+.single-region{
+  display: block;
+  background-color: #34495e; 
+  color: #ecf0f1;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.region-text{
+  font-family: "SimSun";
+  background-color: #34495e; 
+  color: #ecf0f1;
+  font-size: 20px;
+}
+
+.single-city{
+  display: inline;
+}
+
+.single-city a{
+  font-family: "SimSun";
+  color: #34495e;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.single-city a:hover {
+  color: #2980b9;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* -----------------navbar city end---------------- */
+
+/* -----------------navbar food start---------------- */
+
+.sub-menu-food {
+  position: absolute;
+  font-family: "SimSun";
+  background-color: #ecf0f1;
+  list-style-type: none;
+  width: 7vw;
+  padding: 0;
+  margin: 0 auto;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.menu-header-food:hover .sub-menu-food{
+  opacity: 1;
+  z-index: 2;
+}
+
+.food-title{
+  display: block;
+  background-color: #34495e; 
+  color: #ecf0f1;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.food-text{
+  font-family: "SimSun";
+  background-color: #34495e; 
+  color: #ecf0f1;
+  font-size: 20px;
+}
+
+.food-kind{
+  display: inline;
+}
+
+.food-kind a{
+  font-family: "SimSun";
+  color: #34495e;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.food-kind a:hover {
+  color: #2980b9;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* -----------------navbar food end---------------- */
+
+/* -----------------navbar text start---------------- */
+
+.menu-header-city a.menu-header-text,
+.menu-header-food a.menu-header-text,
+.menu-header-about a.menu-header-text{
+  font-family: "SimSun";
+  background-color: none; 
+  color: bisque;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+/* -----------------navbar text end---------------- */
+
+/* -----------------navbar end---------------- */
+
+  .container{
+    text-align: center;
+  }
+  #main{
+    margin-top: 75px;
+    min-height: 93%;
+    /* position: absolute; */
+    margin-bottom: 150px;
+    left: 30%;
+    top: 20%;
+    display: inline-block;
+  }
+
+  table.default-table > th,td{
+      border-bottom: 1.5px solid bisque;
+  }
+
+  table.default-table > tbody > tr > td{
+      width: 300px;
+      /*/padding: 15px;*/
+  }
+
+  table.default-table > tbody > tr > td >img{
+    padding: 30px;
+    height: 250px;
+    width: 250px;
+    /* margin-right: 35px; */
+  }
+
+  table.default-table > tbody > tr > td > ul >li{
+      padding: 5px;
+      width: 350px;
+      list-style-type: none;
+      margin-left: -15%;
+      text-align: start;
+  }
+
+  #fb{
+    padding: 5px;
+    color: #34495e;
+  }
+
+  #footer {
+    text-align: center;
+    height: 40px;
+    background-color:#34495e;
+  }
+  
+  a.footer-text{
+    color: #ecf0f1;
+  }
+
+.loading{
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-top: 10px solid #FF7729;
+    animation: a1 2s linear infinite;
+    position: absolute;
+    margin-top: 15%;
+    left: 45%;
+}
+
+.loading::before,.loading::after{
+    content: '';
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.loading::before{
+    border-top: 10px solid #E6AB35;
+    transform: rotate(120deg);
+}
+
+.loading::after{
+    border-top: 10px solid #1264E6;
+    transform: rotate(240deg);
+}
+
+.loading span{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    color: black;
+    text-align: center;
+    line-height: 200px;
+    animation: a2 2s linear infinite;
+}
+
+@keyframes a1{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes a2{
+    to{
+        transform: rotate(-360deg);
+    }
+}
